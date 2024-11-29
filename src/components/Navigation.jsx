@@ -1,32 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-const Navigation = ({
-  position = "-1 1 -2",
-  rotationZ = "0",
-  direction = "up",
-  navigateTo,
-  caption,
-}) => {
+const Navigation = ({ position = "-1 1 -2", rotationZ = "0", navigateTo }) => {
   const navigate = useNavigate();
-  const positionX = parseFloat(position.split(" ")[0]);
-  const positionY = parseFloat(position.split(" ")[1]);
-  const positionZ = parseFloat(position.split(" ")[2]);
-
-  let imageSrc;
-  switch (direction) {
-    case "up":
-      imageSrc = "/icons/arrow-up.png";
-      break;
-    case "left":
-      imageSrc = "/icons/arrow-left.png";
-      break;
-    case "right":
-      imageSrc = "/icons/arrow-right.png";
-    default:
-      throw new Error("need to declare direction");
-  }
-
+  const [imageSrc, setImageSrc] = useState("/icons/arrow-up.png");
   const handleNavigation = () => {
     navigate(navigateTo);
   };
@@ -40,6 +17,14 @@ const Navigation = ({
         src={imageSrc}
         width=".3"
         height=".3"
+        onMouseEnter={() => setImageSrc("/icons/arrow-up-hover.png")}
+        onMouseLeave={() => setImageSrc("/icons/arrow-up.png")}
+        event-set__satu="
+            _event:mouseleave;
+            src:/icons/arrow-up.png;"
+        event-set__dua="
+            _event:mouseenter;
+            src:/icons/arrow-up-hover.png;"
       />
     </>
   );
