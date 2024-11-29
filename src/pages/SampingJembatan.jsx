@@ -7,7 +7,7 @@ const SampingJembatan = () => {
   const navigate = useNavigate();
 
   function handleEntityClick() {
-    navigate("/setelah-jembatan");
+    navigate("/menuju-jembatan");
   }
 
   return (
@@ -22,7 +22,7 @@ const SampingJembatan = () => {
           position="-1.3 1 -0.7"
           rotation="0 70 0"
           text="
-            value: Masuk; 
+            value: Kembali; 
             color: black; 
             align: center; 
             width: 2.5;"

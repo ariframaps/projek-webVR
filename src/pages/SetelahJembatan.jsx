@@ -6,8 +6,12 @@ import { useNavigate } from "react-router";
 const SetelahJembatan = () => {
   const navigate = useNavigate();
 
-  function handleEntityClick() {
+  function handleToJalan() {
     navigate("/jalan");
+  }
+
+  function handleToMenujuJembatan() {
+    navigate("/menuju-jembatan");
   }
 
   return (
@@ -19,10 +23,10 @@ const SetelahJembatan = () => {
         </a-camera>
 
         <a-entity
-          position="-1.3 1 -0.7"
-          rotation="0 70 0"
+          position="1.3 1 0"
+          rotation="0 -90 0"
           text="
-            value: Masuk; 
+            value: Naik; 
             color: black; 
             align: center; 
             width: 2.5;"
@@ -34,7 +38,26 @@ const SetelahJembatan = () => {
           event-set__dua="
             _event:mouseenter;
             material.color:#00aa00;"
-          onClick={handleEntityClick}
+          onClick={handleToJalan}
+        />
+
+        <a-entity
+          position="0 0 -2"
+          rotation="0 0 0"
+          text="
+            value: Kembali; 
+            color: black; 
+            align: center; 
+            width: 2.5;"
+          geometry="primitive: plane; height: .3; width: 1"
+          material="color: #ffffff;"
+          event-set__satu="
+            _event:mouseleave;
+            material.color:#ffffff;"
+          event-set__dua="
+            _event:mouseenter;
+            material.color:#00aa00;"
+          onClick={handleToMenujuJembatan}
         />
       </a-scene>
     </>
