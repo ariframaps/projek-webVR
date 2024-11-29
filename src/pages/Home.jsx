@@ -3,10 +3,12 @@ import "aframe-particle-system-component";
 import "aframe-event-set-component";
 import Box from "../components/Box";
 import Navigation from "../components/Navigation";
+import { useNavigate } from "react-router";
 
 const Home = () => {
+  const navigate = useNavigate();
   function handleEntityClick() {
-    location.href = "/pintu-masuk";
+    navigate("/pintu-masuk");
   }
 
   return (
