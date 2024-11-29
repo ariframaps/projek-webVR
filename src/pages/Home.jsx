@@ -21,14 +21,27 @@ const Home = () => {
           position=".4 1.5 -2"
           rotation="0 -20 0"
           text="
-            value: Taman Bunga\nWisata Dusun Kuliner Batu; 
+            value: Taman Bunga Wisata Dusun Kuliner Batu; 
             color: black; 
             align: center; 
             width: 2.5;
         "
-          geometry="primitive: plane; height: .5; width: 2"
+          geometry="primitive: plane; height: .2; width: 2.5"
           material="shader: flat;"
         />
+        <a-entity
+          position=".4 1.7 -2"
+          rotation="0 -20 0"
+          text="
+            value: Selamat Datang di; 
+            color: black; 
+            align: center; 
+            width: 3.5;
+        "
+          geometry="primitive: plane; height: .3; width: 2.5"
+          material="shader: flat;"
+        />
+
         <a-entity
           position=".4 1 -2"
           rotation="0 -20 0"
