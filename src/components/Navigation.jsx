@@ -69,3 +69,27 @@ const Navigation = ({ shiftX = 0, shiftY = 0, shiftZ = 0, rotationY = 0 }) => {
 };
 
 export default Navigation;
+
+{
+  /* <a-image
+position="-1 1 -2"
+rotation="-80 0 0"
+src="/icons/arrow-left.png"
+width=".3"
+height=".3"
+/>
+<a-image
+position="-0.5 1 -2"
+rotation="-80 0 0"
+src="/icons/arrow-right.png"
+width=".3"
+height=".3"
+/>
+<a-image
+position="-0.75 1.1 -2.35"
+rotation="-80 0 0"
+src="/icons/arrow-up.png"
+width=".3"
+height=".3"
+/> */
+}

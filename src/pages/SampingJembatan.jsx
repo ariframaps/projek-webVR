@@ -3,17 +3,17 @@ import "aframe-particle-system-component";
 import "aframe-event-set-component";
 import { useNavigate } from "react-router";
 
-const PintuMasuk = () => {
+const SampingJembatan = () => {
   const navigate = useNavigate();
 
   function handleEntityClick() {
-    navigate("/menuju-jembatan");
+    navigate("/setelah-jembatan");
   }
 
   return (
     <>
       <a-scene>
-        <a-sky src="/gopro/GS__1571_1731301416230.JPG"></a-sky>
+        <a-sky src="/gopro/GS__1577_1731301416230.JPG"></a-sky>
         <a-camera wasd-controls="enabled: false">
           <a-cursor color="red"></a-cursor>
         </a-camera>
@@ -41,4 +41,4 @@ const PintuMasuk = () => {
   );
 };
 
-export default PintuMasuk;
+export default SampingJembatan;

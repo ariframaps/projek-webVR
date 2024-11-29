@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <a-scene>
         <a-sky src="/gopro/GS__1569_1731301416230.JPG"></a-sky>
-        <a-camera>
+        <a-camera wasd-controls="enabled: false">
           <a-cursor color="red"></a-cursor>
         </a-camera>
 
@@ -56,8 +56,6 @@ const Home = () => {
             material.color:#00aa00;"
           onClick={handleEntityClick}
         />
-
-        <Navigation shiftX={-0.3} shiftZ={1} />
       </a-scene>
     </>
   );
