@@ -1,23 +1,9 @@
 import "aframe";
 import "aframe-particle-system-component";
 import "aframe-event-set-component";
-import { useNavigate } from "react-router";
+import Navigation from "../components/Navigation";
 
 const MenujuJembatan = () => {
-  const navigate = useNavigate();
-
-  function handleToJembatan() {
-    navigate("/tengah-jembatan");
-  }
-
-  function handleToSampingJembatan() {
-    navigate("/samping-jembatan");
-  }
-
-  function handleToSetelahJembatan() {
-    navigate("/setelah-jembatan");
-  }
-
   return (
     <>
       <a-scene>
@@ -26,61 +12,22 @@ const MenujuJembatan = () => {
           <a-cursor color="red"></a-cursor>
         </a-camera>
 
-        <a-entity
-          position="-1.3 1 0.9"
-          rotation="0 100 0"
-          text="
-            value: Jembatan; 
-            color: black; 
-            align: center; 
-            width: 2.5;"
-          geometry="primitive: plane; height: .3; width: 1"
-          material="color: #ffffff;"
-          event-set__satu="
-            _event:mouseleave;
-            material.color:#ffffff;"
-          event-set__dua="
-            _event:mouseenter;
-            material.color:#00aa00;"
-          onClick={handleToJembatan}
+        <Navigation
+          position="-1.2 .5 .4"
+          rotationZ="180"
+          navigateTo={"/tengah-jembatan"}
         />
 
-        <a-entity
-          position="-1.3 1 -0.7"
-          rotation="0 70 0"
-          text="
-            value: Samping Jembatan; 
-            color: black; 
-            align: center; 
-            width: 2.5;"
-          geometry="primitive: plane; height: .3; width: 1"
-          material="color: #ffffff;"
-          event-set__satu="
-            _event:mouseleave;
-            material.color:#ffffff;"
-          event-set__dua="
-            _event:mouseenter;
-            material.color:#00aa00;"
-          onClick={handleToSampingJembatan}
+        <Navigation
+          position="-1.2 .5 -0.3"
+          rotationZ="0"
+          navigateTo={"/samping-jembatan"}
         />
 
-        <a-entity
-          position="-1.3 .5 0"
-          rotation="0 90 0"
-          text="
-            value: Terus; 
-            color: black; 
-            align: center; 
-            width: 2.5;"
-          geometry="primitive: plane; height: .3; width: 1"
-          material="color: #ffffff;"
-          event-set__satu="
-            _event:mouseleave;
-            material.color:#ffffff;"
-          event-set__dua="
-            _event:mouseenter;
-            material.color:#00aa00;"
-          onClick={handleToSetelahJembatan}
+        <Navigation
+          position="-1.5 .5 0.05"
+          rotationZ="90"
+          navigateTo={"/setelah-jembatan"}
         />
       </a-scene>
     </>

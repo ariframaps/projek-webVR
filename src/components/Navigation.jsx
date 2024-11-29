@@ -6,8 +6,12 @@ const Navigation = ({
   rotationZ = "0",
   direction = "up",
   navigateTo,
+  caption,
 }) => {
   const navigate = useNavigate();
+  const positionX = parseFloat(position.split(" ")[0]);
+  const positionY = parseFloat(position.split(" ")[1]);
+  const positionZ = parseFloat(position.split(" ")[2]);
 
   let imageSrc;
   switch (direction) {

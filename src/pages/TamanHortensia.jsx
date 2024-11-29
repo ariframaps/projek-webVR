@@ -1,14 +1,13 @@
 import "aframe";
 import "aframe-particle-system-component";
 import "aframe-event-set-component";
-import { useNavigate } from "react-router";
+import Navigation from "../components/Navigation";
+import { useState } from "react";
 
 const TamanHortensia = () => {
-  const navigate = useNavigate();
-
-  function handleEntityClick() {
-    navigate("/lapangan");
-  }
+  const [showInfo, setShowInfo] = useState(false);
+  const hortensiaInfo =
+    "Bunga Hortensia adalah bunga yang termasuk dalam keluarga Hydrangeaceae yang dikenal dengan bentuknya yang indah dan warna bunganya yang bervariasi.\n\n Bunga ini bisa tumbuh dengan ketinggian mencapai 1 meteran. Ada beberapa warna untuk bunga  Hortensia, ada warna biru, ada warna pink, ada warna putih, dan juga ada warna ungu.\n\nOh iyaa pH tanah mempengaruhi warna bunga Hortensia lohh. Pada tanah yang bersifat asam (pH rendah), ketersediaan ion aluminium meningkat, yang menyebabkan bunga hortensia berubah menjadi biru. Sebaliknya, pada tanah dengan pH yang lebih tinggi (bersifat basa), bunga Hortensia akan cenderung berwarna pink, karena ketersediaan aluminium berkurang. Oleh karena itu, pengaturan pH tanah menjadi salah satu cara untuk mengubah warna bunga hortensia sesuai keinginan.";
 
   return (
     <>
@@ -19,14 +18,14 @@ const TamanHortensia = () => {
         </a-camera>
 
         <a-entity
-          position="-1.3 1 -0.7"
-          rotation="0 70 0"
-          text="
-            value: Masuk; 
+          position=".5 1 -1.8"
+          rotation="0 -20 0"
+          text={`
+            value: ${showInfo ? "Tutup" : "Hortensia"}; 
             color: black; 
             align: center; 
-            width: 2.5;"
-          geometry="primitive: plane; height: .3; width: 1"
+            width: 2;`}
+          geometry="primitive: plane; height: .2; width: .6"
           material="color: #ffffff;"
           event-set__satu="
             _event:mouseleave;
@@ -34,7 +33,40 @@ const TamanHortensia = () => {
           event-set__dua="
             _event:mouseenter;
             material.color:#00aa00;"
-          onClick={handleEntityClick}
+          onClick={() => setShowInfo(!showInfo)}
+        />
+
+        {showInfo && (
+          <>
+            <a-entity
+              position="-1.1 1.4 -3"
+              rotation="0 20 0"
+              text={`
+              value: ${hortensiaInfo}; 
+              color: black; 
+              align: start; 
+              width: 2;`}
+              geometry="primitive: plane; height: 2.5; width: 2.5"
+              material="color: #ffffff;"
+            />
+            <a-image
+              position="-3 1.4 -1.8"
+              rotation="0 50 0"
+              src="/hortensia.png"
+              height="2.1"
+              width="2.1"></a-image>
+          </>
+        )}
+
+        <Navigation
+          position="-0.6 1 -0.9"
+          rotationZ="90"
+          navigateTo={"/lapangan"}
+        />
+        <Navigation
+          position="0.3 1 -0.9"
+          rotationZ="-90"
+          navigateTo={"/menuju-taman-hortensia"}
         />
       </a-scene>
     </>

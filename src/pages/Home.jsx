@@ -1,8 +1,6 @@
 import "aframe";
 import "aframe-particle-system-component";
 import "aframe-event-set-component";
-import Box from "../components/Box";
-import Navigation from "../components/Navigation";
 import { useNavigate } from "react-router";
 
 const Home = () => {
@@ -18,13 +16,6 @@ const Home = () => {
         <a-camera wasd-controls="enabled: false">
           <a-cursor color="red"></a-cursor>
         </a-camera>
-
-        {/* <a-image
-        src="https://img.icons8.com/?size=100&id=85777&format=png&color=000000"
-        position="0 1 -2"
-        width="1"
-        height="1"
-      />*/}
 
         <a-entity
           position=".4 1.5 -2"

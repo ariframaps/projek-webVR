@@ -2,6 +2,7 @@ import "aframe";
 import "aframe-particle-system-component";
 import "aframe-event-set-component";
 import { useNavigate } from "react-router";
+import Navigation from "../components/Navigation";
 
 const SetelahJembatan = () => {
   const navigate = useNavigate();
@@ -22,42 +23,12 @@ const SetelahJembatan = () => {
           <a-cursor color="red"></a-cursor>
         </a-camera>
 
-        <a-entity
-          position="1.3 1 0"
-          rotation="0 -90 0"
-          text="
-            value: Naik; 
-            color: black; 
-            align: center; 
-            width: 2.5;"
-          geometry="primitive: plane; height: .3; width: 1"
-          material="color: #ffffff;"
-          event-set__satu="
-            _event:mouseleave;
-            material.color:#ffffff;"
-          event-set__dua="
-            _event:mouseenter;
-            material.color:#00aa00;"
-          onClick={handleToJalan}
-        />
+        <Navigation position="1 1 0.1" rotationZ="-90" navigateTo={"/jalan"} />
 
-        <a-entity
-          position="0 0 -2"
-          rotation="0 0 0"
-          text="
-            value: Kembali; 
-            color: black; 
-            align: center; 
-            width: 2.5;"
-          geometry="primitive: plane; height: .3; width: 1"
-          material="color: #ffffff;"
-          event-set__satu="
-            _event:mouseleave;
-            material.color:#ffffff;"
-          event-set__dua="
-            _event:mouseenter;
-            material.color:#00aa00;"
-          onClick={handleToMenujuJembatan}
+        <Navigation
+          position="0 0.4 -1.2"
+          rotationZ="0"
+          navigateTo={"/menuju-jembatan"}
         />
       </a-scene>
     </>

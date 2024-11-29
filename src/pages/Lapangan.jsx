@@ -22,7 +22,7 @@ const Lapangan = () => {
           position="-1.3 1 -0.7"
           rotation="0 70 0"
           text="
-            value: Masuk; 
+            value: Terimakasih :); 
             color: black; 
             align: center; 
             width: 2.5;"
